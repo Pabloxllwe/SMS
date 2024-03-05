@@ -1,0 +1,36 @@
+#mybatis配置
+mybatis:
+    configuration:
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+        map-underscore-to-camel-case: true
+
+#spring配置
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: 1234
+        url: jdbc:mysql://localhost:3306/sms
+        username: root
+    servlet:
+        multipart:
+            max-file-size: 10MB
+            max-request-size: 100MB
+
+#spring事务管理日志
+logging:
+    level:
+        org.springframework.jdbc.support.JdbcTransactionManager: debug
+
+app:
+    minio:
+        # 访问资源的 URL
+        base-url: "http://oss.springboot.io:9000/"
+        # API 端点
+        endpoint: "http://oss.springboot.io:9000/"
+        # 上传的 Bucket
+        bucket: images
+        # Access Key
+        access-key: Umt2UtK5vp7njhM4BFjP
+        # Secret Key
+        secret-key: S3ZJayIxxv3AZfkyCitmrksugzrABbYGJQ4v8OGB
+
